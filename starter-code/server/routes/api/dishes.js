@@ -5,7 +5,7 @@ const Dish      = require('../../models/dish');
 router.get('/', (req, res, next) => {
   Dish.find({}, (err, dishes) => {
     if (err) { return res.json(err).status(500); }
-
+    console.log("on routerget");
     return res.json(dishes);
   });
 });
@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   Dish.findById(req.params.id, (err, dish) => {
     if (err)         { return res.status(500).json(err); }
-    if (!dish)      { return res.status(404).json(new Error("404")) }
+    if (!dish)      { return res.status(404).json(new Error("404")); }
 
     return res.json(dish);
   });
