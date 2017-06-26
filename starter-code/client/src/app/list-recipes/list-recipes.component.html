@@ -2,7 +2,7 @@
   list-recipes works!
 </p>
 <div *ngFor="let dish of dishes">
+  <a [routerLink]="['/list/', dish._id]">dish</a>
     <h3> {{ dish.name }}&nbsp;</h3>
-    <h5>{{dish.description}}</h5>
-    <img src={{dish.image}}>
+    <h4>{{dish.description}}</h4>
 </div>

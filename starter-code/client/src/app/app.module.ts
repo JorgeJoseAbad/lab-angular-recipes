@@ -2,16 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routes, RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { DishesServiceService} from './services/dishes-service.service';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
-
-import { Routes, RouterModule } from "@angular/router";
+import { OneRecipeComponent } from './one-recipe/one-recipe.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'list', component: ListRecipesComponent },
+  { path: 'list/:id', component: OneRecipeComponent}
 
 ];
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ListRecipesComponent,
+    OneRecipeComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,5 +16,10 @@ export class DishesServiceService {
       .map((res) => res.json());
   }
 
+  getOneRecipe(id){
+    return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
+      .map((res)=>res.json());
+  }
+
 
 }
