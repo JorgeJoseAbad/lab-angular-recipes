@@ -8,7 +8,7 @@ import { DishesServiceService} from '../services/dishes-service.service';
   providers: [DishesServiceService]
 })
 export class ListRecipesComponent implements OnInit {
-  dishes:any;
+  dishes:Array<Object>;
 
   constructor(private dishesService: DishesServiceService) { }
 

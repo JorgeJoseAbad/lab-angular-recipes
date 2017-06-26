@@ -10,7 +10,7 @@ import { ListRecipesComponent } from './list-recipes/list-recipes.component';
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'list', component: ListRecipesComponent },
 
 ];
