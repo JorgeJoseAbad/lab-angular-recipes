@@ -6,6 +6,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { DishesServiceService} from './services/dishes-service.service';
+import { IngredientsService} from './services/ingredients.service';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
 import { OneRecipeComponent } from './one-recipe/one-recipe.component';
 
