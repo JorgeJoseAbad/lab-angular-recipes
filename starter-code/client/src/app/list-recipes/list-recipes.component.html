@@ -1,8 +1,8 @@
-<p>
-  list-recipes works!
-</p>
+<h2>
+  {{listRecipesTitle}}
+</h2>
 <div *ngFor="let dish of dishes">
-  <a [routerLink]="['/list/', dish._id]">dish</a>
+  <a [routerLink]="['/list/', dish._id]">{{dish.name}}</a>
     <h3> {{ dish.name }}&nbsp;</h3>
     <h4>{{dish.description}}</h4>
 </div>

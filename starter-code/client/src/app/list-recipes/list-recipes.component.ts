@@ -9,6 +9,7 @@ import { DishesServiceService} from '../services/dishes-service.service';
 })
 export class ListRecipesComponent implements OnInit {
   dishes:Array<Object>;
+  private listRecipesTitle : String = "Listing of recipes here!"
 
   constructor(private dishesService: DishesServiceService) { }
 

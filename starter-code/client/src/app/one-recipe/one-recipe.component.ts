@@ -13,14 +13,16 @@ export class OneRecipeComponent implements OnInit {
   oneRecipe: Object;
   recipeID: String;
 
+
   constructor(
     private dish: DishesServiceService,
     private ingredient: IngredientsService,
     private route: ActivatedRoute) { }
 
     ngOnInit() {
-      this.route.params.subscribe((recipe) => {
-        this.recipeID = recipe['id']
+      this.route.params.subscribe((recipeIdObject) => {
+        debugger;
+        this.recipeID = recipeIdObject['id'];
       });
       this.dish.getOneRecipe(this.recipeID).subscribe((dish) => {
         this.dish = dish
