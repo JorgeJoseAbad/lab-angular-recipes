@@ -11,17 +11,23 @@
 
 
 <h1>¿Quieres añadir otro ingrediente?</h1>
+<h3>Añade los datos:</h3>
 <form (ngSubmit)="addNewIngredient(myForm)" #myForm="ngForm">
 
-  <label> Name </label>
-  <input type="text" [(ngModel)]="name" name="name"/>
+  <div class="form-group">
+    <label for="name"> Name </label>
+    <input type="text" [(ngModel)]="name" name="name"/>
+  </div>
 
-  <label> Description</label>
-  <input type="text" [(ngModel)]="description" name="description"/>
+  <div class="form-group">
+    <label for="description"> Description</label>
+    <input type="text" [(ngModel)]="description" name="description"/>
+  </div>
 
-  <label> image </label>
-  <input type="url" [(ngModel)]="image" name="image"/>
-
+  <div class="form-group">
+    <label for="image"> image </label>
+    <input type="url" [(ngModel)]="image" name="image"/>
+  </div>
   <button type="submit"> Add New Ingredient </button>
 
 </form>

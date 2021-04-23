@@ -11,7 +11,9 @@ export class ListRecipesComponent implements OnInit {
   dishes:Array<Object>;
   private listRecipesTitle : String = "Listing of recipes here!"
 
-  constructor(private dishesService: DishesServiceService) { }
+  constructor(
+    private dishesService: DishesServiceService
+  ) { }
 
   ngOnInit() {
     console.log('on init ListRecipesComponent');

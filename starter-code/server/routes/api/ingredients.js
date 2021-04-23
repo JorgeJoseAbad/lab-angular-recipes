@@ -24,7 +24,7 @@ router.post('/', (req, res, next) => {
     description: req.body.description,
     image: req.body.image
   });
- debugger;
+
   newIngredient.save( (err) => {
     if (err) { return res.status(500).json(err); }
 

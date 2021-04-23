@@ -21,13 +21,11 @@ export class IngredientsComponent implements OnInit {
         list => {
           console.log(list);
           this.ingredients = list;
-          debugger;
         }
       )
   }
 
   addNewIngredient(form){
-    debugger;
     let newIngredient = {
       name : form.value.name,
       description: form.value.description,

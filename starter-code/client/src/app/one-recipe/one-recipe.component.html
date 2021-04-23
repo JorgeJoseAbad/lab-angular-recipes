@@ -5,11 +5,11 @@
   <h2>{{dish.name}}</h2>
   <img src="{{dish.image}}"/>
   <h4>{{dish.description}}</h4>
-  <a routerLink="/"> Back Home </a>
-  <div *ngFor="let ingredient of ingredients">
 
-      {{ingredient}}
-
+ <h2>List of Ingredients</h2>
+  <div *ngFor="let ingredient of listIngredients">
+    <img src="{{ingredient.image}}" alt="" width="50">
+    {{ingredient.name}}      
   </div>
 </div>
-View
+<a routerLink="/"> Back Home </a>

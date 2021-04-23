@@ -12,6 +12,7 @@ import { IngredientsService} from '../services/ingredients.service';
 export class OneRecipeComponent implements OnInit {
   oneRecipe: Object;
   recipeID: String;
+  listIngredients:Array<Object>;
 
 
   constructor(
@@ -26,10 +27,12 @@ export class OneRecipeComponent implements OnInit {
       this.dish.getOneRecipe(this.recipeID).subscribe((dish) => {
         this.dish = dish
       });
-      debugger;
+
       this.ingredient.getList()
-        .subscribe(
-          list => console.log(list)
+        .subscribe((listIngredients)=>{
+          this.listIngredients = listIngredients;
+        }
+
         )
     }
 
