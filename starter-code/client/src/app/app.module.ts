@@ -9,12 +9,13 @@ import { DishesServiceService} from './services/dishes-service.service';
 import { IngredientsService} from './services/ingredients.service';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
 import { OneRecipeComponent } from './one-recipe/one-recipe.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'list', component: ListRecipesComponent },
-  { path: 'list/:id', component: OneRecipeComponent}
-
+  { path: 'list/:id', component: OneRecipeComponent},
+  { path: 'ingredients', component: IngredientsComponent}
 ];
 
 @NgModule({
@@ -22,6 +23,7 @@ const routes: Routes = [
     AppComponent,
     ListRecipesComponent,
     OneRecipeComponent,
+    IngredientsComponent,
   ],
   imports: [
     BrowserModule,

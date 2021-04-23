@@ -5,7 +5,6 @@ const Ingredient = require('../../models/ingredient');
 router.get('/', (req, res, next) => {
   Ingredient.find({}, (err, ingredients) => {
     if (err) { return res.status(500).json(err); }
-
     return res.json(ingredients);
   });
 });
@@ -25,7 +24,7 @@ router.post('/', (req, res, next) => {
     description: req.body.description,
     image: req.body.image
   });
-
+ debugger;
   newIngredient.save( (err) => {
     if (err) { return res.status(500).json(err); }
 

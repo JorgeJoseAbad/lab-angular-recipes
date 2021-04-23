@@ -6,5 +6,10 @@
   <img src="{{dish.image}}"/>
   <h4>{{dish.description}}</h4>
   <a routerLink="/"> Back Home </a>
+  <div *ngFor="let ingredient of ingredients">
+
+      {{ingredient}}
+
+  </div>
 </div>
 View

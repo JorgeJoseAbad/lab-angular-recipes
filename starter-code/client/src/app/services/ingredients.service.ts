@@ -15,5 +15,12 @@ export class IngredientsService {
       .map((res) => res.json());
   }
 
+  addNew(newIngredient){
+    console.log('on new ingredient')
+    debugger;
+    return this.http.post(`${this.BASE_URL}/api/ingredients`,newIngredient,)
+      .map((res)=> res.json());
+  }
+
 
 }

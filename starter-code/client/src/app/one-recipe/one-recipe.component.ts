@@ -21,12 +21,16 @@ export class OneRecipeComponent implements OnInit {
 
     ngOnInit() {
       this.route.params.subscribe((recipeIdObject) => {
-        debugger;
         this.recipeID = recipeIdObject['id'];
       });
       this.dish.getOneRecipe(this.recipeID).subscribe((dish) => {
         this.dish = dish
       });
+      debugger;
+      this.ingredient.getList()
+        .subscribe(
+          list => console.log(list)
+        )
     }
 
 }

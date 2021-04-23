@@ -4,17 +4,17 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "start-dev":"nodemon --inspect ./bin/www"
+    "start-dev": "nodemon --inspect ./bin/www"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "cookie-parser": "~1.4.3",
-    "cors": "^2.8.1",
-    "debug": "~2.2.0",
-    "ejs": "~2.5.2",
-    "express": "~4.14.0",
-    "mongoose": "^4.8.4",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.5",
+    "cors": "^2.8.5",
+    "debug": "~4.3.1",
+    "ejs": "~3.1.6",
+    "express": "~4.17.1",
+    "mongoose": "^5.12.5",
+    "morgan": "~1.10.0",
+    "serve-favicon": "~2.5.0"
   }
 }
