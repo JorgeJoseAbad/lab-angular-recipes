@@ -6,10 +6,21 @@
   <img src="{{dish.image}}"/>
   <h4>{{dish.description}}</h4>
 
- <h2>List of Ingredients</h2>
-  <div *ngFor="let ingredient of listIngredients">
-    <img src="{{ingredient.image}}" alt="" width="50">
-    {{ingredient.name}}      
-  </div>
+  <h2>List of Ingredients</h2>
+  <ul>
+    <div *ngFor="let ingredient of listIngredients">
+      <li>
+        <img src="{{ingredient.image}}" alt="" width="50">
+        {{ingredient.name}}
+        <form (ngSubmit)="addToRecipe(myForm)" #myForm="ngForm">
+           <label for="number">Number of this ingredient</label>
+           <input type="number" name="number" [(ngModel)]="number">
+           <input type="hidden" name="ingredientId" [(ngModel)]="ingredient._id">
+           <button type="submit"> add Reply </button>
+        </form>
+
+      </li>
+    </div>
+  </ul>
 </div>
 <a routerLink="/"> Back Home </a>

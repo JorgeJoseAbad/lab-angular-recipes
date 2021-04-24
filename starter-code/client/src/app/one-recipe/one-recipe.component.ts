@@ -10,30 +10,41 @@ import { IngredientsService} from '../services/ingredients.service';
   providers: [DishesServiceService,IngredientsService]
 })
 export class OneRecipeComponent implements OnInit {
-  oneRecipe: Object;
-  recipeID: String;
-  listIngredients:Array<Object>;
-
+  private dish: Object = {};
+  private recipeID: String;
+  private listIngredients:Array<Object>;
 
   constructor(
-    private dish: DishesServiceService,
+    private dishesService: DishesServiceService,
     private ingredient: IngredientsService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+}
 
     ngOnInit() {
       this.route.params.subscribe((recipeIdObject) => {
         this.recipeID = recipeIdObject['id'];
       });
-      this.dish.getOneRecipe(this.recipeID).subscribe((dish) => {
+      this.dishesService.getOneRecipe(this.recipeID)
+      .subscribe((dish) => {
         this.dish = dish
       });
 
       this.ingredient.getList()
         .subscribe((listIngredients)=>{
           this.listIngredients = listIngredients;
-        }
-
+          }
         )
+    }
+
+    addToRecipe(data){
+
+      let idIngredient = data.value.ingredientId;
+      let number = data.value.number;
+      let idRecipe = this.recipeID
+
+      this.dishesService.addNewIngredient(idRecipe,idIngredient,number)
+        .subscribe((res)=>console.log(res));
+
     }
 
 }
