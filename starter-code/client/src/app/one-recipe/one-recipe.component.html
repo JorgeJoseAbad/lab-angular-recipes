@@ -14,7 +14,7 @@
         {{ingredient.name}}
         <form (ngSubmit)="addToRecipe(myForm)" #myForm="ngForm">
            <label for="number">Number of this ingredient</label>
-           <input type="number" name="number" [(ngModel)]="number">
+           <input type="number" name="quantity" [(ngModel)]="quantity">
            <input type="hidden" name="ingredientId" [(ngModel)]="ingredient._id">
            <button type="submit"> add Reply </button>
         </form>

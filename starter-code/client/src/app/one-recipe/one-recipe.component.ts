@@ -39,10 +39,10 @@ export class OneRecipeComponent implements OnInit {
     addToRecipe(data){
 
       let idIngredient = data.value.ingredientId;
-      let number = data.value.number;
+      let quantity = data.value.quantity;
       let idRecipe = this.recipeID
 
-      this.dishesService.addNewIngredient(idRecipe,idIngredient,number)
+      this.dishesService.addNewIngredient(idRecipe,idIngredient,quantity)
         .subscribe((res)=>console.log(res));
 
     }
