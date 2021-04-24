@@ -10,20 +10,16 @@ export class IngredientsService {
   constructor(private http: Http) { }
 
   getList() {
-    console.log('on getlist of service ingredients');
     return this.http.get(`${this.BASE_URL}/api/ingredients`)
       .map((res) => res.json());
   }
 
   addNew(newIngredient){
-    console.log('on new ingredient')
     return this.http.post(`${this.BASE_URL}/api/ingredients`,newIngredient,)
       .map((res)=> res.json());
   }
 
   getIngredient(id){
-
-    console.log(id);
     return this.http.get(`${this.BASE_URL}/api/ingredients/${id}`)
       .map(res=>res.json())
   }

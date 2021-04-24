@@ -11,7 +11,6 @@ export class DishesServiceService {
   constructor(private http: Http) { }
 
   getList() {
-    console.log('on getlist of service');
     return this.http.get(`${this.BASE_URL}/api/dishes`)
       .map((res) => res.json());
   }
@@ -22,7 +21,6 @@ export class DishesServiceService {
   }
 
   addNewIngredient(idRecipe,idIngredient,quantity) {
-    debugger;
     return this.http.post(`${this.BASE_URL}/api/dishes/${idRecipe}/ingredients/${idIngredient}/add`,{quantity})
       .map((res)=>res.json())
   }

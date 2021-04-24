@@ -9,8 +9,8 @@
     <h4>A list of ingredients in this recipe</h4>
     <div *ngFor="let ingredient of dish.ingredients">
         <li>
-          <h3>Name: {{ingredient.name}}&nbsp;</h3>
-          <h4>Quantity: {{ingredient.quantity}}</h4>
+          <p><b>Name: </b> {{ingredient.name}}</p>
+          <p><b>Quantity: </b>{{ingredient.quantity}}</p>
         </li>
 
     </div>
@@ -24,7 +24,7 @@
         {{ingredient.name}}
         <form (ngSubmit)="addToRecipe(myForm)" #myForm="ngForm">
            <label for="number">Number of this ingredient</label>
-           <input type="number" name="quantity" [(ngModel)]="quantity">
+           <input type="number" name="quantity" [(ngModel)]="ingredient.quantity">
            <input type="hidden" name="ingredientId" [(ngModel)]="ingredient._id">
            <button type="submit"> add ingredient! </button>
         </form>
