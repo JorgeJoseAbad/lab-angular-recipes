@@ -7,10 +7,10 @@
   <h4>{{dish.description}}</h4>
   <ul>
     <h4>A list of ingredients in this recipe</h4>
-    <div *ngFor="let listDishIngredient of listDishIngredients">
+    <div *ngFor="let ingredient of dish.ingredients">
         <li>
-          <h3> {{listDishIngredient.name}}&nbsp;</h3>
-          <h4>{{listDishIngredient.quantity}}</h4>
+          <h3>Name: {{ingredient.name}}&nbsp;</h3>
+          <h4>Quantity: {{ingredient.quantity}}</h4>
         </li>
 
     </div>

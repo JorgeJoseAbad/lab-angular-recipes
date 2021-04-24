@@ -25,23 +25,37 @@ export class OneRecipeComponent implements OnInit {
       this.route.params.subscribe((recipeIdObject) => {
         this.recipeID = recipeIdObject['id'];
       });
+      /*
+      dish = {
+        // ...
+        ingredients: [
+          {
+            ingredient: { name: "Olive Oil" },
+            quantity: 1
+          },
+        ]
+      }
+      */
 
       this.dishesService.getOneRecipe(this.recipeID)
       .subscribe((dish) => {
-        debugger;
         dish.ingredients.forEach(
-          (item)=>this.ingredient.getIngredient(item.ingredientId)
+          (item,i)=>this.ingredient.getIngredient(item.ingredientId)
             .subscribe((ingredient)=>{
               let ingredient_in_dish={
                 name : ingredient.name,
                 quantity:item.quantity
               }
               this.listDishIngredients.push(ingredient_in_dish);
+              dish.ingredients[i] = {};
+              dish.ingredients[i] = ingredient_in_dish;
+            
             })
         );
-        this.dish = dish
-      });
+        this.dish = dish;
+        console.log(this.dish);
 
+      });
 
       this.ingredient.getList()
         .subscribe((listIngredients)=>{
