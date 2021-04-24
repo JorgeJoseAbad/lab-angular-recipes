@@ -13,6 +13,7 @@ export class OneRecipeComponent implements OnInit {
   private dish: Object = {};
   private recipeID: String;
   private listIngredients:Array<Object>;
+  private listDishIngredients:Array<Object> = [];
 
   constructor(
     private dishesService: DishesServiceService,
@@ -24,10 +25,23 @@ export class OneRecipeComponent implements OnInit {
       this.route.params.subscribe((recipeIdObject) => {
         this.recipeID = recipeIdObject['id'];
       });
+
       this.dishesService.getOneRecipe(this.recipeID)
       .subscribe((dish) => {
+        debugger;
+        dish.ingredients.forEach(
+          (item)=>this.ingredient.getIngredient(item.ingredientId)
+            .subscribe((ingredient)=>{
+              let ingredient_in_dish={
+                name : ingredient.name,
+                quantity:item.quantity
+              }
+              this.listDishIngredients.push(ingredient_in_dish);
+            })
+        );
         this.dish = dish
       });
+
 
       this.ingredient.getList()
         .subscribe((listIngredients)=>{

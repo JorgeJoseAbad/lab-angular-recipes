@@ -5,8 +5,18 @@
   <h2>{{dish.name}}</h2>
   <img src="{{dish.image}}"/>
   <h4>{{dish.description}}</h4>
+  <ul>
+    <h4>A list of ingredients in this recipe</h4>
+    <div *ngFor="let listDishIngredient of listDishIngredients">
+        <li>
+          <h3> {{listDishIngredient.name}}&nbsp;</h3>
+          <h4>{{listDishIngredient.quantity}}</h4>
+        </li>
 
-  <h2>List of Ingredients</h2>
+    </div>
+  </ul>
+
+  <h2>List of Posibles Ingredients</h2>
   <ul>
     <div *ngFor="let ingredient of listIngredients">
       <li>
@@ -16,7 +26,7 @@
            <label for="number">Number of this ingredient</label>
            <input type="number" name="quantity" [(ngModel)]="quantity">
            <input type="hidden" name="ingredientId" [(ngModel)]="ingredient._id">
-           <button type="submit"> add Reply </button>
+           <button type="submit"> add ingredient! </button>
         </form>
 
       </li>
